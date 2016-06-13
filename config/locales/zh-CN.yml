@@ -1,0 +1,42 @@
+zh-CN:
+  activerecord:
+    attributes:
+      search_param:
+        mount: "相机接口"
+        flange_focal_distance: "相机sensor到接口的距离"
+        sensor_size: "Sensor对角线长度"
+        fangdabeilv: "放大倍率"
+        gongzuojuli: "工作距离"
+        gongzuojulitiaozheng: "工作距离可调整的范围"
+        xiangyuan: "解像力/相机的像元大小"
+
+  simple_form:
+    labels:
+      user:
+        username: 'User name'
+        password: 'Password'
+    hints:
+      user:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
+    placeholders:
+      user:
+        username: 'Your username'
+        password: '****'
+    include_blanks:
+      user:
+        age: 'Rather not say'
+    prompts:
+      user:
+        gender: 'Select your gender'
+
+  enums:
+    search_param:
+      mount:
+        c: C
+        f: F
+        m42: M42
+        m58: M58
+        m92: M92
+        m90: M90
+        m95: M95

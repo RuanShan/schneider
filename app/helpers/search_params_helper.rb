@@ -1,0 +1,2 @@
+module SearchParamsHelper
+end

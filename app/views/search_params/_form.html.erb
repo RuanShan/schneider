@@ -1,0 +1,61 @@
+<%= form_for(@search_param) do |f| %>
+  <% if @search_param.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_param.errors.count, "error") %> prohibited this search_param from being saved:</h2>
+
+      <ul>
+      <% @search_param.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :mount %><br>
+    <%= f.text_field :mount %>
+  </div>
+  <div class="field">
+    <%= f.label :flange_focal_distance %><br>
+    <%= f.text_field :flange_focal_distance %>
+  </div>
+  <div class="field">
+    <%= f.label :sensor_size %><br>
+    <%= f.text_field :sensor_size %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br>
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :float %><br>
+    <%= f.text_field :float %>
+  </div>
+  <div class="field">
+    <%= f.label :work_length %><br>
+    <%= f.text_field :work_length %>
+  </div>
+  <div class="field">
+    <%= f.label :float %><br>
+    <%= f.text_field :float %>
+  </div>
+  <div class="field">
+    <%= f.label :work_lenght_round %><br>
+    <%= f.text_field :work_lenght_round %>
+  </div>
+  <div class="field">
+    <%= f.label :float %><br>
+    <%= f.text_field :float %>
+  </div>
+  <div class="field">
+    <%= f.label :xiangyuan %><br>
+    <%= f.text_field :xiangyuan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

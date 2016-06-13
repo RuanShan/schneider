@@ -1,0 +1,44 @@
+<%= simple_form_for(@search_param, url: step2_lens_path, method: :get) do |f| %>
+  <% if @search_param.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_param.errors.count, "error") %> prohibited this search_param from being saved:</h2>
+
+      <ul>
+      <% @search_param.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <table>
+      <tr>
+        <td class="field_name"> <%= f.label :mount %> </td> <td><%= f.input_field :mount %> </td>
+      </tr>
+      <tr>
+        <td class="field_name"> <%= f.label :flange_focal_distance %> </td> <td><%= f.input_field :flange_focal_distance, as: :float%> </td>
+      </tr>
+      <tr>
+        <td class="field_name"> <%= f.label :sensor_size %> </td> <td><%= f.text_field :sensor_size %> </td>
+      </tr>
+      <tr>
+        <td class="field_name"> <%= f.label :fangdabeilv %> </td> <td><%= f.text_field :fangdabeilv %> </td>
+      </tr>
+      <tr>
+        <td class="field_name"> <%= f.label :gongzuojuli %> </td> <td><%= f.text_field :gongzuojuli %> </td>
+      </tr>
+      <tr>
+        <td class="field_name"> <%= f.label :gongzuojulitiaozheng %> </td> <td><%= f.text_field :gongzuojulitiaozheng %> </td>
+      </tr>
+      <tr>
+        <td class="field_name"> <%= f.label :xiangyuan %> </td> <td><%= f.text_field :xiangyuan %> </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" class="actions"> <%= f.submit 'submit' %> <td>
+      </tr>
+    </table>
+  </div>
+
+
+<% end %>
