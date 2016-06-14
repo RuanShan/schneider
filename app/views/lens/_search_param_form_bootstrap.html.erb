@@ -1,0 +1,93 @@
+<%= simple_form_for(@search_param, url: step2_lens_path, method: :get, html: {class: 'search_param_form'}) do |f| %>
+  <% if @search_param.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search_param.errors.count, "error") %> prohibited this search_param from being saved:</h2>
+
+      <ul>
+      <% @search_param.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+
+    <table style="width: 100%;">
+     <tr> <td class="sequence" valign='top'> 1.</td>
+       <td> <div> Camera information(必填）</div>
+           <div class="search_field clearfix form-group-sm">
+               <div class="c40 text-right">
+               <%= f.label :mount %>
+               </div>
+               <div class ='c60' >
+                 <%= f.input_field :mount %>
+               </div>
+           </div>
+         <div class="search_field clearfix">
+           <div class="c40 text-right">
+            <%= f.label :flange_focal_distance %>
+           </div>
+            <div class ='c60' >
+              <%= f.input_field :flange_focal_distance, as: :float%>
+            </div>
+         </div>
+         <div class="search_field clearfix">
+           <div class="c40 text-right">
+             <%= f.label :sensor_size %>
+           </div>
+           <div class ='c60' > <%= f.text_field :sensor_size %> </div>
+         </div>
+       </td>
+     </tr>
+
+    <tr> <td class="sequence" valign='top'> 2.</td>
+      <td>
+        <div class="search_field  clearfix">
+          <div class="c40 text-right">
+            <%= f.label :fangdabeilv, '放大倍率' %>
+          </div>
+          <div class ='c60' >
+           <%= f.text_field :fangdabeilv %> </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr> <td class="sequence" valign='top'> 3.</td>
+      <td>
+        <div class="search_field  clearfix">
+          <div class="c40 text-right">
+            <%= f.label :gongzuojuli %>
+          </div>
+          <div class ='c60' >
+           <%= f.text_field :gongzuojuli %> </div>
+          </div>
+        </div>
+        <div class="search_field  clearfix">
+          <div class="c40 text-right">
+            <%= f.label :gongzuojulitiaozheng %>
+          </div>
+          <div class ='c60' >
+           <%= f.text_field :gongzuojulitiaozheng %> </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr> <td class="sequence" valign='top'> 4.</td>
+      <td>
+        <div class="search_field  clearfix">
+          <div class="c40 text-right">
+            <%= f.label :xiangyuan %>
+          </div>
+          <div class ='c60' >
+           <%= f.text_field :xiangyuan %> </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </table>
+
+    <div class="actions"> <%= f.submit 'submit' %> </div>
+  </div>
+
+
+<% end %>

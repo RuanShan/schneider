@@ -15,26 +15,24 @@ ActiveRecord::Schema.define(version: 20160613115122) do
 
   create_table "lens", force: :cascade do |t|
     t.string   "name"
-    t.float    "ju_jiao_tiao_jie_zhi"
-    t.string   "wu_xiang_ju"
+    t.string   "code"
+    t.float    "guang_quan_fan_wei_min"
+    t.float    "guang_quan_fan_wei_max"
     t.float    "gong_zuo_ju_li_min"
     t.float    "gong_zuo_ju_li_max"
     t.float    "gong_zuo_ju_li5_min"
     t.float    "gong_zuo_ju_li5_max"
     t.float    "gong_zuo_ju_li8_min"
     t.float    "gong_zuo_ju_li8_max"
-    t.float    "guang_quan_fan_wei_min"
-    t.float    "guang_quan_fan_wei_max"
     t.float    "weight"
-    t.integer  "mount"
+    t.integer  "mount",                  default: 0
     t.float    "flange_focal_distance"
+    t.float    "image_circle"
     t.float    "sensor_size"
-    t.float    "region"
-    t.float    "work_length"
-    t.float    "work_lenght_round"
-    t.float    "xiangyuan"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.float    "fang_da_bei_lv"
+    t.float    "xiang_yuan"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "search_params", force: :cascade do |t|
@@ -46,8 +44,9 @@ ActiveRecord::Schema.define(version: 20160613115122) do
     t.float    "gongzuojuli"
     t.float    "gongzuojulitiaozheng"
     t.float    "xiangyuan"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "gong_zuo_ju_li_tiao_zheng"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

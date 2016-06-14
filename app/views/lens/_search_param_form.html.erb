@@ -1,4 +1,4 @@
-<%= simple_form_for(@search_param, url: step2_lens_path, method: :get) do |f| %>
+<%= simple_form_for(@search_param, url: step2_lens_path, method: :get, html: {class: 'search_param_form'}) do |f| %>
   <% if @search_param.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@search_param.errors.count, "error") %> prohibited this search_param from being saved:</h2>
@@ -11,33 +11,44 @@
     </div>
   <% end %>
   <div>
-    <table>
-      <tr>
-        <td class="field_name"> <%= f.label :mount %> </td> <td><%= f.input_field :mount %> </td>
-      </tr>
-      <tr>
-        <td class="field_name"> <%= f.label :flange_focal_distance %> </td> <td><%= f.input_field :flange_focal_distance, as: :float%> </td>
-      </tr>
-      <tr>
-        <td class="field_name"> <%= f.label :sensor_size %> </td> <td><%= f.text_field :sensor_size %> </td>
-      </tr>
-      <tr>
-        <td class="field_name"> <%= f.label :fangdabeilv %> </td> <td><%= f.text_field :fangdabeilv %> </td>
-      </tr>
-      <tr>
-        <td class="field_name"> <%= f.label :gongzuojuli %> </td> <td><%= f.text_field :gongzuojuli %> </td>
-      </tr>
-      <tr>
-        <td class="field_name"> <%= f.label :gongzuojulitiaozheng %> </td> <td><%= f.text_field :gongzuojulitiaozheng %> </td>
-      </tr>
-      <tr>
-        <td class="field_name"> <%= f.label :xiangyuan %> </td> <td><%= f.text_field :xiangyuan %> </td>
-      </tr>
 
-      <tr>
-        <td colspan="2" class="actions"> <%= f.submit 'submit' %> <td>
-      </tr>
-    </table>
+     <div class="clear-block condition">
+       <div class="fl sequence">1. </div>
+       <div class="fl">
+         <div> Camera information(必填）</div>
+         <div class="search_field"> <%= f.label :mount %>
+           <%= f.input_field :mount, collection: SearchParam.mounts.keys %>
+         </div>
+         <div class="search_field"> <%= f.label :flange_focal_distance %> <%= f.input_field :flange_focal_distance, as: :float%> mm
+         </div>
+         <div class="search_field"> <%= f.label :sensor_size %> <%= f.text_field :sensor_size %> mm </div>
+       </div>
+     </div>
+
+      <div class="clear-block condition">
+        <div class="fl sequence"> 2. </div>
+        <div class="fl"> <%= f.label :fangdabeilv, '放大倍率' %> <%= f.text_field :fangdabeilv %> </div>
+      </div>
+      <div class="clear-block condition">
+        <div class="fl sequence"> 3. </div>
+        <div class="fl">
+          <div class="search_field">
+            <%= f.label :gongzuojuli %> <%= f.text_field :gongzuojuli %> mm
+          </div>
+          <div class="search_field">
+            <%= f.label :gong_zuo_ju_li_tiao_zheng %>
+            <%= f.input_field :gong_zuo_ju_li_tiao_zheng, collection: SearchParam.gong_zuo_ju_li_tiao_zhengs.keys %>
+          </div>
+        </div>
+      </div>
+    <div class="clear-block condition">
+      <div class="fl sequence"> 4. </div>
+      <div class="fl">
+      <%= f.label :xiangyuan %> <%= f.text_field :xiangyuan %> mm
+      </div>
+    </div>
+
+    <div class="actions"> <%= f.submit 'submit' %> </div>
   </div>
 
 

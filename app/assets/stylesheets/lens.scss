@@ -1,3 +1,23 @@
 // Place all the styles related to the lens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search_param_form label{
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+
+.condition{
+  padding: 6px 0;
+}
+.search_field{
+  padding: 2px 0;
+}
+.sequence{
+  padding: 0 6px;
+}
+
+.step3 td{
+  text-align: center;
+}

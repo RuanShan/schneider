@@ -69,6 +69,6 @@ class SearchParamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_param_params
-      params.require(:search_param).permit(:name, :mount, :flange_focal_distance, :sensor_size, :region, :float, :work_length, :float, :work_lenght_round, :float, :xiangyuan)
+      params.require(:search_param).permit(:name, :mount, :flange_focal_distance, :sensor_size, :work_length, :work_lenght_round, :xiangyuan)
     end
 end

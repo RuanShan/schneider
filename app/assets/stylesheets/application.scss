@@ -10,14 +10,30 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+ @import "bootstrap";
+ @import "blueprint_custom";
+ @import "scaffolds";
+ @import "lens";
+ .page{ width: 900px; margin: 0 auto;}
+ .fl{ float:left;}
+ .fr{ float:right;}
+ .clear-block:after {
+   content: ".";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+ }
+ .clear-block {
+   display: block;
+ }
+
 
 td.field_name{
   text-align: right;
 }
 
 td.actions{
-  text-align: right;  
+  text-align: right;
 }

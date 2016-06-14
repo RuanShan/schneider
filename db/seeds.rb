@@ -5,11 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-max = 9999999
 
-len_params=  [
-  { name: 'Cinegon 1.8/4.8-0902', code: '1001955', weight: 90,
-    guang_quan_fan_wei_min: 1.8,  guang_quan_fan_wei_max: 11,
-
-  }
-]
+seeds_path = File.join(File.dirname(__FILE__), 'seeds')
+#suffix number of seeds file name indicate loading order.
+xpath = File.join(seeds_path,"**", "*.rb")
+Dir[xpath].sort.each {|file|
+  puts "loading #{file}"
+  load file
+}

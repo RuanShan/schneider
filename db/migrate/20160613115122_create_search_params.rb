@@ -9,7 +9,7 @@ class CreateSearchParams < ActiveRecord::Migration
       t.float :gongzuojuli
       t.float :gongzuojulitiaozheng
       t.float :xiangyuan
-
+      t.integer :gong_zuo_ju_li_tiao_zheng
       t.timestamps null: false
     end
   end
