@@ -20,7 +20,7 @@
                <%= f.label :mount %>
                </div>
                <div class ='c60' >
-                 <%= f.input_field :mount %>
+                 <%= f.input_field :mount, collection: SearchParam.mounts.keys %>
                </div>
            </div>
          <div class="search_field clearfix">
@@ -64,10 +64,10 @@
         </div>
         <div class="search_field  clearfix">
           <div class="c40 text-right">
-            <%= f.label :gongzuojulitiaozheng %>
+            <%= f.label :gong_zuo_ju_li_tiao_zheng %>
           </div>
           <div class ='c60' >
-           <%= f.text_field :gongzuojulitiaozheng %> </div>
+            <%= f.input_field :gong_zuo_ju_li_tiao_zheng, collection: SearchParam.gong_zuo_ju_li_tiao_zhengs.keys %>
           </div>
         </div>
       </td>
